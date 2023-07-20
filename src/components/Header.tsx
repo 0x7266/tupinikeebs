@@ -1,14 +1,12 @@
-export default function Header() {
+export function Header() {
 	return (
-		<div className="bg-orange-300">
-			<div className="container">
-				<div className="">⌨</div>
-				<nav>
-					<a href="">Products</a>
-					<a href="">About</a>
-					<a href="">Contact</a>
-				</nav>
-			</div>
+		<div className="flex justify-around items-center">
+			<div className="text-6xl">⌨</div>
+			<nav className="flex gap-6 text-xl font-semibold">
+				<a href="">Products</a>
+				<a href="">About</a>
+				<a href="">Contact</a>
+			</nav>
 		</div>
 	);
 }
