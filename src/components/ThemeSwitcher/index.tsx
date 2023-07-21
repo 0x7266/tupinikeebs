@@ -1,4 +1,5 @@
 import { MouseEvent, ReactElement, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ComputerIcon from "./ComputerIcon";
 import MoonIcon from "./MoonIcon";
 import SunIcon from "./SunIcon";
@@ -64,8 +65,13 @@ export function ThemeSwitcher() {
 	}, [currentTheme]);
 
 	return (
-		<div className="absolute right-14 top-2">
-			<div className="absolute flex flex-col border bg-zinc-600 rounded-full px-2 py-2">
+		<div className="absolute right-14 top-6">
+			<motion.div
+				layout
+				className="flex flex-col border bg-zinc-600 rounded-full px-2 py-2"
+				animate={{ height: "auto" }}
+				transition={{ duration: 0.04 }}
+			>
 				{themes.map((theme, index) => (
 					<button
 						key={index}
@@ -78,7 +84,7 @@ export function ThemeSwitcher() {
 						{theme.icon}
 					</button>
 				))}
-			</div>
+			</motion.div>
 		</div>
 	);
 }

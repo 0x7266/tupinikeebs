@@ -8,7 +8,7 @@ export function Header() {
 	];
 
 	return (
-		<div className="flex justify-center bg-zinc-300 py-5 dark:text-zinc-950 w-full">
+		<div className="flex justify-center bg-zinc-300 py-5 dark:bg-gray-700 dark:text-zinc-950 w-full">
 			<div className="container flex flex-col gap-3 md:flex-row justify-around items-center">
 				<div className="flex flex-col md:flex-row items-center">
 					<span className="text-9xl md:text-6xl">⌨</span>
