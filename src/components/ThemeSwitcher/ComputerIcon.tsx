@@ -6,7 +6,7 @@ export default function ComputerIcon() {
 			viewBox="0 0 80 80"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className="stroke-zinc-950 dark:stroke-zinc-200 stroke-[5px]"
+			className="stroke-zinc-200 stroke-[5px]"
 		>
 			<path d="M61 66H19" strokeLinecap="round" strokeLinejoin="round" />
 			<path d="M40 58V66" strokeLinecap="round" strokeLinejoin="round" />

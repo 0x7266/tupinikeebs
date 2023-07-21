@@ -65,7 +65,7 @@ export function ThemeSwitcher() {
 
 	return (
 		<div className="absolute right-14 top-2">
-			<div className="absolute flex flex-col border border-zinc-950 dark:border-zinc-200 rounded-full px-2 py-2">
+			<div className="absolute flex flex-col border bg-zinc-600 rounded-full px-2 py-2">
 				{themes.map((theme, index) => (
 					<button
 						key={index}
