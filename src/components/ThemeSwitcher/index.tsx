@@ -65,7 +65,7 @@ export function ThemeSwitcher() {
 	}, [currentTheme]);
 
 	return (
-		<div className="absolute right-14 top-6">
+		<div className="absolute right-1 top-1 md:right-14 md:top-6">
 			<motion.div
 				layout
 				className="flex flex-col border bg-zinc-600 rounded-full px-2 py-2"
