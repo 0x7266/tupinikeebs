@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components";
 import { Home, Products } from "./pages";
+import Product from "./components/Product";
 
 function App() {
 	return (
@@ -10,6 +11,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/products" element={<Products />} />
+					<Route path="/:id" element={<Product />} />
 				</Routes>
 			</div>
 		</BrowserRouter>
