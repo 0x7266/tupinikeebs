@@ -7,12 +7,14 @@ function App() {
 	return (
 		<BrowserRouter>
 			<div className="h-[100dvh] bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col items-center font-mono gap-5">
-				<Header />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/products" element={<Products />} />
-					<Route path="/:id" element={<Product />} />
-				</Routes>
+				<div className="container py-5 flex flex-col items-center gap-10">
+					<Header />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/products" element={<Products />} />
+						<Route path="/:id" element={<Product />} />
+					</Routes>
+				</div>
 			</div>
 		</BrowserRouter>
 	);
