@@ -1,11 +1,11 @@
-import corneLeft from "../assets/corne_left.png";
-import corneRight from "../assets/corne_right.png";
-import video from "../assets/home_video.webm";
+// import corneLeft from "../assets/corne_left.png";
+// import corneRight from "../assets/corne_right.png";
+// import video from "../assets/home_video.webm";
 import CardSlider from "../components/CardSlider";
 
 export function Home() {
 	return (
-		<div className="grid grid-cols-2 h-full">
+		<div className="grid grid-cols-2 h-full w-4/5">
 			{/* <div
 				className="left w-96 h-96"
 				style={{
@@ -24,7 +24,7 @@ export function Home() {
 				}}
 			></div> */}
 			{/* <video src={video} autoPlay muted loop></video> */}
-			<div className="flex flex-col gap-5 items-end justify-center">
+			<div className="flex flex-col gap-5 items-center">
 				<h1 className="text-6xl font-bold w-2/3">LOREM IPSUM</h1>
 				<p className="w-2/3 text-lg">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
