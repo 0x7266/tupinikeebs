@@ -10,15 +10,15 @@ export function Header() {
 	];
 
 	return (
-		<div className="flex justify-center dark:text-text-dark w-full">
+		<header className="flex justify-center dark:text-text-dark w-full">
 			<div className="container flex flex-col gap-3 md:flex-row justify-around items-center">
-				<div className="flex flex-col md:flex-row gap-2 items-center relative">
+				<div className="flex flex-col md:flex-row gap-4 items-center relative">
 					<img className="w-28" src={logo} />
-					<span className="text-5xl md:text-2xl font-bold relative -top-6 md:-top-0">
+					<span className="text-5xl md:text-2xl font-bold relative -top-4 md:-top-0">
 						TupiniKeebs
 					</span>
 				</div>
-				<nav className="flex items-center text-xl font-semibold gap-6 w-full md:w-fit justify-around md:justify-center">
+				<nav className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center">
 					{links.map((link, index) => (
 						<Link to={link.path} key={index}>
 							{link.name}
@@ -28,6 +28,6 @@ export function Header() {
 				</nav>
 				<ThemeSwitcher />
 			</div>
-		</div>
+		</header>
 	);
 }
