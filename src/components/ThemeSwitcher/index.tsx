@@ -32,7 +32,7 @@ export function ThemeSwitcher() {
 		]);
 	}
 
-	console.log(window.matchMedia("(prefers-color-scheme: dark)"));
+	// console.log(window.matchMedia("(prefers-color-scheme: dark)"));
 
 	function onWindowMatch() {
 		if (
