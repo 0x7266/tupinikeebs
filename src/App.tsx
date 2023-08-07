@@ -6,14 +6,16 @@ import Product from "./components/Product";
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="min-h-[100dvh] bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col items-center font-mono gap-5 overflow-hidden">
-				<div className="container h-full py-5 flex flex-col items-center gap-12 md:gap-20">
-					<Header />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/products" element={<Products />} />
-						<Route path="/:id" element={<Product />} />
-					</Routes>
+			<div className="bg-pattern min-h-screen">
+				<div className="min-h-[100dvh] bg-opacity-90 dark:bg-opacity-90 bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col items-center font-mono gap-5 overflow-hidden backdrop-blur-sm">
+					<div className="container h-full py-5 flex flex-col items-center gap-12 md:gap-20">
+						<Header />
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/products" element={<Products />} />
+							<Route path="/:id" element={<Product />} />
+						</Routes>
+					</div>
 				</div>
 			</div>
 		</BrowserRouter>
