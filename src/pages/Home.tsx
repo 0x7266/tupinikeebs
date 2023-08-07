@@ -4,6 +4,7 @@
 import { Link } from "react-router-dom";
 import typingImg from "../assets/typing.webp";
 import emailIcon from "../assets/email_icon.webp";
+import telegramIcon from "../assets/telegram_icon.png";
 import twitterIcon from "../assets/twitter_icon.png";
 
 export function Home() {
@@ -37,8 +38,11 @@ export function Home() {
 						culpa ut temporibus.
 					</div>
 					<div className="flex gap-5">
-						<Link to="">
+						<Link to="https://twitter.com/neversaytop">
 							<img src={twitterIcon} alt="twitter" className="w-16" />
+						</Link>
+						<Link to="">
+							<img src={telegramIcon} alt="telegram" className="w-16" />
 						</Link>
 						<Link to="">
 							<img src={emailIcon} alt="email me" className="w-16" />
