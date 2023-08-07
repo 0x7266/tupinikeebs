@@ -20,36 +20,37 @@ export function Products() {
 	}, []);
 
 	return (
-		<motion.div
-			ref={carouselRef}
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ duration: 0.4 }}
-			whileTap={{ cursor: "grabbing" }}
-			className="w-full cursor-grab overflow-hidden"
-		>
-			{/* "key" prop will re-render the element when update the state "width", preventing dragConstraints bug */}
-			<motion.div
-				key={width}
-				drag="x"
-				dragConstraints={{ right: 0, left: -width }}
-				className="flex space-x-16 laptop:space-x-12 mobile:space-x-6"
-			>
-				{products.map((product, index) => (
-					<Link to={`/${product.id}`}>
-						<motion.div
-							key={index}
-							className="h-[20rem] min-w-[50rem] rounded-xl overflow-hidden flex flex-col gap-5 bg-secondary dark:bg-secondary-dark text-3xl font-bold	"
-						>
-							<p className="text-center">{product.name}</p>
-							<img
-								src={product.img}
-								className="w-full h-full object-cover pointer-events-none"
-							/>
-						</motion.div>
-					</Link>
-				))}
-			</motion.div>
-		</motion.div>
+		<div className="text-center">PRODUCTS</div>
+		// <motion.div
+		// 	ref={carouselRef}
+		// 	initial={{ opacity: 0 }}
+		// 	animate={{ opacity: 1 }}
+		// 	transition={{ duration: 0.4 }}
+		// 	whileTap={{ cursor: "grabbing" }}
+		// 	className="w-full cursor-grab overflow-hidden"
+		// >
+		// 	{/* "key" prop will re-render the element when update the state "width", preventing dragConstraints bug */}
+		// 	<motion.div
+		// 		key={width}
+		// 		drag="x"
+		// 		dragConstraints={{ right: 0, left: -width }}
+		// 		className="flex space-x-16 laptop:space-x-12 mobile:space-x-6"
+		// 	>
+		// 		{products.map((product, index) => (
+		// 			<Link to={`/${product.id}`}>
+		// 				<motion.div
+		// 					key={index}
+		// 					className="h-[20rem] min-w-[50rem] rounded-xl overflow-hidden flex flex-col gap-5 bg-secondary dark:bg-secondary-dark text-3xl font-bold	"
+		// 				>
+		// 					<p className="text-center">{product.name}</p>
+		// 					<img
+		// 						src={product.img}
+		// 						className="w-full h-full object-cover pointer-events-none"
+		// 					/>
+		// 				</motion.div>
+		// 			</Link>
+		// 		))}
+		// 	</motion.div>
+		// </motion.div>
 	);
 }
