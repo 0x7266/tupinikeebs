@@ -7,7 +7,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<div className="bg-pattern min-h-screen">
-				<div className="min-h-[100dvh] bg-opacity-90 dark:bg-opacity-90 bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col items-center font-mono gap-5 overflow-hidden backdrop-blur-sm">
+				<div className="min-h-[100dvh] bg-opacity-80 dark:bg-opacity-90 bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col items-center font-mono gap-5 overflow-hidden backdrop-blur-[10px]">
 					<div className="container h-full py-5 flex flex-col items-center gap-12 md:gap-20">
 						<Header />
 						<Routes>
