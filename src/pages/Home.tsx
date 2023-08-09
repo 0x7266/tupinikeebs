@@ -3,8 +3,12 @@ import typingImg from "../assets/typing.webp";
 import emailIcon from "../assets/icons/email_icon.webp";
 import telegramIcon from "../assets/icons/telegram_icon.png";
 import twitterIcon from "../assets/icons/twitter_icon.png";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export function Home() {
+	const { scrollYProgress } = useScroll();
+	const imgScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1.3]);
+
 	return (
 		<section className="h-[300dvh] px-5 flex flex-col items-center">
 			<div className="flex flex-col gap-2 md:gap-5 w-2/5 items-center justify-self-end fixed">
@@ -27,7 +31,8 @@ export function Home() {
 					</Link>
 				</div>
 			</div>
-			<img
+			<motion.img
+				style={{ scale: imgScale }}
 				src={typingImg}
 				alt=""
 				className="place-self-center relative top-[60vh]"
