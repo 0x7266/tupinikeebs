@@ -1,11 +1,8 @@
-// import corneLeft from "../assets/corne_left.png";
-// import corneRight from "../assets/corne_right.png";
-// import video from "../assets/home_video.webm";
 import { Link } from "react-router-dom";
 import typingImg from "../assets/typing.webp";
-import emailIcon from "../assets/email_icon.webp";
-import telegramIcon from "../assets/telegram_icon.png";
-import twitterIcon from "../assets/twitter_icon.png";
+import emailIcon from "../assets/icons/email_icon.webp";
+import telegramIcon from "../assets/icons/telegram_icon.png";
+import twitterIcon from "../assets/icons/twitter_icon.png";
 
 export function Home() {
 	return (
