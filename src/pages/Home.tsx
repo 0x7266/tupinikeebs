@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import typingImg from "../assets/typing.webp";
+// import typingImg from "../assets/typing.webp";
 import emailIcon from "../assets/icons/email_icon.webp";
 import telegramIcon from "../assets/icons/telegram_icon.png";
 import twitterIcon from "../assets/icons/twitter_icon.png";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 export function Home() {
-	const { scrollYProgress } = useScroll();
-	const imgScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1.3]);
+	// const { scrollYProgress } = useScroll();
+	// const imgScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1.3]);
 
 	return (
 		<section className="px-5 flex flex-col items-center">
