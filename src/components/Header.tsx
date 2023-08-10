@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 import logo from "../assets/logo.png";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 
 export function Header() {
 	const links = [
@@ -46,7 +44,6 @@ export function Header() {
 					))}
 					{/* <div className="text-4xl">🛒</div> */}
 				</nav>
-				{/* <ThemeSwitcher /> */}
 			</div>
 		</motion.header>
 	);
