@@ -17,22 +17,25 @@ export function Header() {
 		offset: ["end end", "end start"],
 	});
 
-	const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-	const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+	const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+	const position = useTransform(scrollYProgress, (pos) =>
+		pos >= 1 ? "relative" : "fixed"
+	);
+	const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.1]);
 
 	return (
 		<motion.header
 			ref={ref}
-			className="flex justify-center z-10 rounded-b-lg py-16 h-screen"
+			className="h-screen flex justify-center py-32 items-start"
 		>
 			<motion.div
-				style={{ opacity, scale }}
-				className="container flex flex-col gap-3 md:flex-row justify-around items-center"
+				style={{ opacity, position, scale }}
+				className="container flex flex-col gap-3 justify-around items-center"
 			>
 				<Link to="/">
-					<div className="flex flex-col md:flex-row gap-4 items-center relative">
+					<div className="flex flex-col gap-3 items-center relative">
 						<img className="w-28" src={logo} />
-						<span className="text-5xl md:text-2xl font-bold relative -top-4 md:-top-0">
+						<span className="text-5xl font-bold relative -top-4 md:-top-0">
 							TupiniKeebs
 						</span>
 					</div>
