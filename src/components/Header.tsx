@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import logo from "../assets/logo.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export function Header() {
 	const links = [
@@ -9,8 +11,24 @@ export function Header() {
 		{ path: "/faq", name: "FAQ" },
 	];
 
+	const { scrollYProgress } = useScroll();
+
+	const backgroundColor = useTransform(
+		scrollYProgress,
+		[0, 0.01],
+		["#dbe6f000", "#2c4b68ff"]
+	);
+	const textColor = useTransform(
+		scrollYProgress,
+		[0, 0.01],
+		["#0f1a24", "#ffffff"]
+	);
+
 	return (
-		<header className="flex justify-center dark:text-text-dark w-full">
+		<motion.header
+			style={{ backgroundColor, color: textColor }}
+			className="flex justify-center dark:text-text-dark w-full sticky top-0 z-10 rounded-b-lg py-3"
+		>
 			<div className="container flex flex-col gap-3 md:flex-row justify-around items-center">
 				<Link to="/">
 					<div className="flex flex-col md:flex-row gap-4 items-center relative">
@@ -28,8 +46,8 @@ export function Header() {
 					))}
 					{/* <div className="text-4xl">🛒</div> */}
 				</nav>
-				<ThemeSwitcher />
+				{/* <ThemeSwitcher /> */}
 			</div>
-		</header>
+		</motion.header>
 	);
 }
