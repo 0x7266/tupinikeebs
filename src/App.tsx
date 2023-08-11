@@ -6,7 +6,7 @@ import Product from "./components/Product";
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="min-h-[100dvh] bg text-text-dark flex flex-col items-center font-mono gap-5 overflow-x-clip backdrop-blur-sm">
+			<div className="min-h-[100dvh] text-text-dark flex flex-col items-center font-mono gap-5 overflow-x-clip">
 				<div className="container h-full flex flex-col items-center gap-12 md:gap-20">
 					<Header />
 					<Routes>
