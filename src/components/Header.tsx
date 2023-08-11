@@ -34,8 +34,8 @@ export function Header() {
 			>
 				<Link to="/">
 					<div className="flex flex-col gap-3 items-center relative">
-						<img className="w-28" src={logo} />
-						<span className="text-5xl font-bold relative -top-4 md:-top-0">
+						<img className="w-32" src={logo} />
+						<span className="text-9xl font-bold relative -top-4 md:-top-0">
 							TupiniKeebs
 						</span>
 					</div>
