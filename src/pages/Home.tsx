@@ -13,12 +13,12 @@ export function Home() {
 	});
 	const scale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 	const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-	const translate = useTransform(scrollYProgress, [0.8, 1], ["0px", "-30vw"]);
+	const translate = useTransform(scrollYProgress, [0.6, 0.8], ["0px", "-30vw"]);
 
 	return (
 		<motion.section
 			ref={containerRef}
-			className="flex flex-col items-center mt-[-65vh] sticky top-[20vh]"
+			className="flex flex-col items-center mt-[-75vh]"
 		>
 			<motion.div
 				style={{ scale, opacity, translateX: translate }}
@@ -26,7 +26,7 @@ export function Home() {
 			>
 				<div className="group relative">
 					<div className="absolute blur bg-accent transition duration-200 rounded-md -inset-1 opacity-80 animate-tilt"></div>
-					<h1 className="text-5xl md:text-6xl font-bold relative bg-background-dark px-5 py-2 rounded-md text-text-dark group-hover:text-secondary transition duration-500">
+					<h1 className="text-5xl md:text-6xl font-bold relative bg-background-dark px-5 py-2 rounded-md group-hover:text-secondary transition duration-300">
 						PEÇA JÁ O SEU
 					</h1>
 				</div>
