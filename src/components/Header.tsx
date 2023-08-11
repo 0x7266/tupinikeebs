@@ -17,7 +17,7 @@ export function Header() {
 		offset: ["end end", "end start"],
 	});
 
-	const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+	const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 	const position = useTransform(scrollYProgress, (pos) =>
 		pos >= 1 ? "relative" : "fixed"
 	);
@@ -46,7 +46,6 @@ export function Header() {
 							{link.name}
 						</Link>
 					))}
-					{/* <div className="text-4xl">🛒</div> */}
 				</nav>
 			</motion.div>
 		</motion.header>
