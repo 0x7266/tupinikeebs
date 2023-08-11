@@ -14,7 +14,7 @@ export function Header() {
 
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		offset: ["end end", "end start"],
+		// offset: ["end end", "end start"],
 	});
 
 	const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
@@ -26,7 +26,7 @@ export function Header() {
 	return (
 		<motion.header
 			ref={ref}
-			className="h-screen flex justify-center py-32 items-start"
+			className="flex justify-center border border-green-500"
 		>
 			<motion.div
 				style={{ opacity, position, scale }}
