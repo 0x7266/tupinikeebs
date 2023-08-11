@@ -9,7 +9,6 @@ function App() {
 	const mouseY = useMotionValue(0);
 
 	function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-		console.log(clientX);
 		const { left, top } = currentTarget.getBoundingClientRect();
 		mouseX.set(clientX - left);
 		mouseY.set(clientY - top);
@@ -19,16 +18,16 @@ function App() {
 		<BrowserRouter>
 			<motion.div
 				onMouseMove={handleMouseMove}
-				className="min-h-[100dvh] bg text-text-dark  font-mono gap-5 overflow-x-clip relative"
+				className="min-h-[100dvh] bg shadow-small text-text-dark  font-mono gap-5 overflow-x-clip relative"
 			>
 				<div className="w-full h-full backdrop-brightness-[25%] flex flex-col items-center group">
 					<motion.div
 						className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl"
 						style={{
-							background: useMotionTemplate`radial-gradient(300px circle at ${mouseX}px ${mouseY}px, rgba(200, 200, 200, .15), transparent 80%)`,
+							background: useMotionTemplate`radial-gradient(300px circle at ${mouseX}px ${mouseY}px, rgba(140, 140, 140, .20), transparent 80%)`,
 						}}
 					/>
-					<div className="container h-full flex flex-col items-center gap-12 md:gap-20">
+					<div className="container flex flex-col items-center gap-12 md:gap-20">
 						<Header />
 						<Routes>
 							<Route path="/" element={<Home />} />
