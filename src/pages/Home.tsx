@@ -1,16 +1,28 @@
 import { Link } from "react-router-dom";
-// import typingImg from "../assets/typing.webp";
+import { motion, useScroll, useTransform } from "framer-motion";
+import typingImg from "../assets/typing.webp";
 import emailIcon from "../assets/icons/email_icon.webp";
 import telegramIcon from "../assets/icons/telegram_icon.png";
 import twitterIcon from "../assets/icons/twitter_icon.png";
+import { useRef } from "react";
 
 export function Home() {
-	// const { scrollYProgress } = useScroll();
-	// const imgScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1.3]);
+	const containerRef = useRef(null);
+	const { scrollYProgress } = useScroll({
+		// target: containerRef,
+	});
+	const imgScale = useTransform(scrollYProgress, [0, 0.2], [0.3, 1]);
+	const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
 	return (
-		<section className="px-5 flex flex-col items-center">
-			<div className="h-[200dvh] flex flex-col gap-2 md:gap-5 w-2/5 items-center justify-self-end">
+		<motion.section
+			ref={containerRef}
+			className="flex flex-col items-center relative mt-[-70vh]"
+		>
+			<motion.div
+				style={{ opacity }}
+				className="h-[200dvh] flex flex-col gap-2 md:gap-5 w-2/5 items-center justify-self-end"
+			>
 				<div className="group sticky top-0">
 					<div className="absolute blur bg-accent transition duration-200 rounded-md -inset-1 opacity-80 animate-tilt"></div>
 					<h1 className="text-5xl md:text-6xl font-bold relative bg-background-dark px-5 py-2 rounded-md text-text-dark group-hover:text-secondary transition duration-500">
@@ -34,15 +46,15 @@ export function Home() {
 						<img src={emailIcon} alt="email me" className="w-16" />
 					</Link>
 				</div>
-			</div>
-			{/* <div className="border h-full">
-				<motion.img
-					style={{ scale: imgScale }}
-					src={typingImg}
-					alt=""
-					className="place-self-center relative top-[60vh]"
-				/>
-			</div> */}
-		</section>
+				<div>
+					<motion.img
+						style={{ scale: imgScale }}
+						src={typingImg}
+						alt=""
+						className="place-self-center relative"
+					/>
+				</div>
+			</motion.div>
+		</motion.section>
 	);
 }
