@@ -3,6 +3,8 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { Header } from "./components";
 import { Home, Products } from "./pages";
 import Product from "./components/Product";
+import Slider from "./components/Slider";
+import Carousel from "./components/Carousel";
 
 function App() {
 	const mouseX = useMotionValue(0);
@@ -20,7 +22,7 @@ function App() {
 		<BrowserRouter>
 			<motion.div
 				onMouseMove={handleMouseMove}
-				className="bg shadow-small md:shadow-large text-text-dark font-mono gap-5 overflow-x-clip relative"
+				className="bg shadow-small md:shadow-large text-text-dark font-mono overflow-x-clip"
 			>
 				<div className="w-full h-full backdrop-brightness-[25%] flex flex-col items-center group">
 					<motion.div
@@ -30,13 +32,14 @@ function App() {
 						}}
 					/>
 					<Header />
-					<div className="container flex flex-col items-center gap-12 md:gap-20">
+					<Carousel />
+					{/* <div className="container flex flex-col items-center gap-12 md:gap-20">
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/products" element={<Products />} />
 							<Route path="/:id" element={<Product />} />
 						</Routes>
-					</div>
+					</div> */}
 				</div>
 			</motion.div>
 		</BrowserRouter>
