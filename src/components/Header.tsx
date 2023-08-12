@@ -14,40 +14,42 @@ export function Header() {
 
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		// offset: ["end end", "end start"],
+		offset: ["end end", "end start"],
 	});
 
-	const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+	const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 	const position = useTransform(scrollYProgress, (pos) =>
 		pos >= 1 ? "relative" : "fixed"
 	);
-	const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.1]);
+	const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
 	return (
 		<motion.header
 			ref={ref}
-			className="flex justify-center border border-green-500"
+			className="bg shadow-small w-full md:shadow-large h-screen"
 		>
-			<motion.div
-				style={{ opacity, position, scale }}
-				className="container flex flex-col gap-3 justify-around items-center"
-			>
-				<Link to="/">
-					<div className="flex flex-col gap-3 items-center relative">
-						<img className="w-32" src={logo} />
-						<span className="text-9xl font-bold relative -top-4 md:-top-0">
-							TupiniKeebs
-						</span>
-					</div>
-				</Link>
-				<nav className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center">
-					{links.map((link, index) => (
-						<Link to={link.path} key={index}>
-							{link.name}
-						</Link>
-					))}
-				</nav>
-			</motion.div>
+			<div className="backdrop-brightness-[25%] w-full h-full flex justify-center">
+				<motion.div
+					style={{ position, scale }}
+					className="flex flex-col gap-3 justify-around items-center mt-[15vh]"
+				>
+					<Link to="/">
+						<div className="flex flex-col gap-3 items-center relative">
+							<img className="w-32" src={logo} />
+							<span className="text-9xl font-bold relative -top-4 md:-top-0">
+								TupiniKeebs
+							</span>
+						</div>
+					</Link>
+					<nav className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center">
+						{links.map((link, index) => (
+							<Link to={link.path} key={index}>
+								{link.name}
+							</Link>
+						))}
+					</nav>
+				</motion.div>
+			</div>
 		</motion.header>
 	);
 }
