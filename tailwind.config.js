@@ -32,7 +32,7 @@ export default {
 				},
 			},
 			boxShadow: {
-				large: "inset 0 0 30vw 10rem #000",
+				large: "inset 0 0 20vh 20vh #000",
 				small: "inset 0 0 15rem 2vw #000",
 			},
 		},
