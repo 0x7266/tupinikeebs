@@ -22,9 +22,9 @@ function App() {
 		<BrowserRouter>
 			<motion.div
 				onMouseMove={handleMouseMove}
-				className="bg shadow-small md:shadow-large text-text-dark font-mono overflow-x-clip"
+				className="text-text-dark font-mono overflow-x-clip"
 			>
-				<div className="w-full h-full backdrop-brightness-[25%] flex flex-col items-center group">
+				<div className="h-full backdrop-brightness-[25%] flex flex-col items-center group">
 					<motion.div
 						className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl"
 						style={{
