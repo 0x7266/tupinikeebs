@@ -21,35 +21,37 @@ export function Header() {
 	const position = useTransform(scrollYProgress, (pos) =>
 		pos >= 1 ? "relative" : "fixed"
 	);
-	const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+	const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.6]);
 
 	return (
-		<motion.header
-			ref={ref}
-			className="bg shadow-small w-full md:shadow-large h-screen"
-		>
-			<div className="backdrop-brightness-[25%] w-full h-full flex justify-center">
+		<header className="bg w-full h-screen">
+			<div className="backdrop-brightness-[25%] h-full">
 				<motion.div
-					style={{ position, scale }}
-					className="flex flex-col gap-3 justify-around items-center mt-[15vh]"
+					ref={ref}
+					className="w-full h-full flex justify-center pt-10"
 				>
-					<Link to="/">
-						<div className="flex flex-col gap-3 items-center relative">
-							<img className="w-32" src={logo} />
-							<span className="text-9xl font-bold relative -top-4 md:-top-0">
-								TupiniKeebs
-							</span>
-						</div>
-					</Link>
-					<nav className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center">
-						{links.map((link, index) => (
-							<Link to={link.path} key={index}>
-								{link.name}
-							</Link>
-						))}
-					</nav>
+					<motion.div
+						style={{ position, scale, opacity }}
+						className="flex flex-col gap-3 justify-around items-center"
+					>
+						<Link to="/">
+							<div className="flex flex-col gap-3 items-center relative">
+								<img className="w-32" src={logo} />
+								<span className="text-9xl font-bold relative -top-4 md:-top-0">
+									TupiniKeebs
+								</span>
+							</div>
+						</Link>
+						<nav className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center">
+							{links.map((link, index) => (
+								<Link to={link.path} key={index}>
+									{link.name}
+								</Link>
+							))}
+						</nav>
+					</motion.div>
 				</motion.div>
 			</div>
-		</motion.header>
+		</header>
 	);
 }
