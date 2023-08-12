@@ -13,7 +13,7 @@ export default function Slider({ images }: Props) {
 
 	useEffect(() => {
 		setWidth(
-			(_prev) => carousel.current!.scrollWidth - carousel.current!.offsetWidth
+			(_prev) => carousel.current?.scrollWidth - carousel.current?.offsetWidth
 		);
 	}, [size]);
 
@@ -21,7 +21,7 @@ export default function Slider({ images }: Props) {
 		<motion.div
 			key={size?.width}
 			ref={carousel}
-			className="cursor-grab flex gap-3 border border-rose-500"
+			className="cursor-grab flex gap-3 z-50"
 		>
 			<motion.div
 				drag="x"
