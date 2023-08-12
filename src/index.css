@@ -5,5 +5,5 @@
 .bg {
 	background-color: #000000;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-		url("https://cloud-dst3a9oz5-hack-club-bot.vercel.app/0image.png");
+		url("./assets/bg.png");
 }
