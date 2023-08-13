@@ -12,20 +12,23 @@ export function Header() {
 	const containerVariants: Variants = {
 		animate: {
 			transition: {
-				staggerChildren: 0.1,
+				staggerChildren: 0.2,
 			},
 		},
 	};
 
 	const linkVariants: Variants = {
 		initial: {
+			opacity: 0,
 			y: -200,
 		},
 		animate: {
+			opacity: 1,
 			y: 0,
 			transition: {
-				type: "tween",
-				ease: "easeOut",
+				type: "spring",
+				stiffness: 80,
+				damping: 13,
 			},
 		},
 	};

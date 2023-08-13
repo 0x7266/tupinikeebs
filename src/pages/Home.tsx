@@ -10,7 +10,7 @@ export function Home() {
 	const imgScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1.3]);
 
 	return (
-		<section className="h-[300dvh] px-5 flex flex-col items-center">
+		<section className="px-5 flex flex-col items-center">
 			<div className="flex flex-col gap-2 md:gap-5 w-2/5 items-center justify-self-end fixed">
 				<div className="relative group">
 					<div className="absolute blur bg-accent transition duration-200 rounded-md -inset-1 opacity-80 animate-tilt"></div>
