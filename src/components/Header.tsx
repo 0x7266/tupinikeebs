@@ -9,15 +9,7 @@ export function Header() {
 		{ path: "/faq", name: "FAQ" },
 	];
 
-	const headerVariants: Variants = {
-		animate: {
-			transition: {
-				staggerChildren: 0.1,
-			},
-		},
-	};
-
-	const navVariants: Variants = {
+	const containerVariants: Variants = {
 		animate: {
 			transition: {
 				staggerChildren: 0.1,
@@ -31,13 +23,17 @@ export function Header() {
 		},
 		animate: {
 			y: 0,
+			transition: {
+				type: "tween",
+				ease: "easeOut",
+			},
 		},
 	};
 
 	return (
 		<header className="flex justify-center dark:text-text-dark w-full">
 			<motion.div
-				variants={headerVariants}
+				variants={containerVariants}
 				initial="initial"
 				animate="animate"
 				className="container flex flex-col gap-3 md:flex-row justify-around items-center"
@@ -53,7 +49,7 @@ export function Header() {
 					</Link>
 				</motion.div>
 				<motion.nav
-					variants={navVariants}
+					variants={containerVariants}
 					className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center"
 				>
 					{links.map((link, index) => (
