@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { AnimatePresence, Variants, motion } from "framer-motion";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { Variants, motion } from "framer-motion";
 import logo from "../assets/logo.png";
 
 export function Header() {
