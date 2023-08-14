@@ -8,9 +8,9 @@ function App() {
 	return (
 		<AnimatePresence>
 			<BrowserRouter>
-				<div className="bg min-h-[100dvh] h-screen">
-					<div className="flex flex-col items-center gap-5 overflow-hidden backdrop-brightness-[20%] text-text-dark font-mono shadow-large h-full">
-						<div className="container h-full py-5 flex flex-col items-center gap-12 md:gap-20">
+				<div className="bg">
+					<div className="backdrop-brightness-[20%] min-h-[100dvh] shadow-small md:shadow-large">
+						<div className="container mx-auto h-full py-5 flex flex-col items-center gap-12 md:gap-20 text-text-dark font-mono">
 							<Header />
 							<Routes>
 								<Route path="/" element={<Home />} />
