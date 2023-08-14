@@ -36,12 +36,6 @@ export function Home() {
 					</Link>
 				</div>
 			</div>
-			<motion.img
-				style={{ scale: imgScale }}
-				src={typingImg}
-				alt=""
-				className="place-self-center relative top-[60vh]"
-			/>
 		</section>
 	);
 }
