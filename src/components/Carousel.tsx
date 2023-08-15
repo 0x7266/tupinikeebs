@@ -43,23 +43,33 @@ export function Carousel() {
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ delay: 0.5, duration: 1 }}
+			transition={{ delay: 0.4, duration: 1 }}
 			className="h-full overflow-x-hidden flex flex-col gap-3 items-center overflow-hidden"
 		>
 			<Slider images={images} direction={direction} page={page} slide={slide} />
 			<div className="flex gap-5 text-xl justify-center z-50">
-				<button
-					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600"
+				<motion.button
+					initial={{ scale: 0 }}
+					animate={{ scale: 1 }}
+					transition={{
+						delay: 1,
+					}}
+					className="relative active:4op-1 hover:text-text-dark disabled:text-gray-600"
 					onClick={() => slide(-1)}
 				>
 					{"<<"}
-				</button>
-				<button
+				</motion.button>
+				<motion.button
+					initial={{ scale: 0 }}
+					animate={{ scale: 1 }}
+					transition={{
+						delay: 1,
+					}}
 					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600"
 					onClick={() => slide(1)}
 				>
 					{">>"}
-				</button>
+				</motion.button>
 			</div>
 		</motion.div>
 	);

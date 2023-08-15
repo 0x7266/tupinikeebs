@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { Variants, motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import brazilianFlag from "../assets/brazilian_flag.svg";
-import emailIcon from "../assets/icons/email_icon.webp";
-import telegramIcon from "../assets/icons/telegram_icon.png";
-import twitterIcon from "../assets/icons/twitter_icon.png";
+import emailIcon from "../assets/mail.svg";
+import telegramIcon from "../assets/telegram.svg";
+import xIcon from "../assets/x.svg";
+import wppIcon from "../assets/whatsapp.svg";
 
 const sectionVariants: Variants = {
 	animate: {
@@ -105,17 +106,22 @@ export function Hero() {
 				>
 					<motion.div custom={1} variants={iconVariants}>
 						<Link to="https://twitter.com/neversaytop">
-							<img src={twitterIcon} alt="twitter" className="w-16" />
+							<img src={xIcon} alt="twitter" className="w-12" />
 						</Link>
 					</motion.div>
 					<motion.div custom={2} variants={iconVariants}>
 						<Link to="">
-							<img src={telegramIcon} alt="telegram" className="w-12" />
+							<img src={wppIcon} alt="telegram" className="w-12" />
 						</Link>
 					</motion.div>
 					<motion.div custom={3} variants={iconVariants}>
 						<Link to="">
-							<img src={emailIcon} alt="email me" className="w-16" />
+							<img src={telegramIcon} alt="telegram" className="w-12" />
+						</Link>
+					</motion.div>
+					<motion.div custom={4} variants={iconVariants}>
+						<Link to="">
+							<img src={emailIcon} alt="email me" className="w-12" />
 						</Link>
 					</motion.div>
 				</motion.div>
