@@ -11,8 +11,8 @@ export function Home() {
 
 	return (
 		<section className="px-5 flex flex-col items-center">
-			<div className="flex flex-col gap-2 md:gap-5 w-2/5 items-center justify-self-end fixed">
-				<div className="relative group">
+			<div className="flex flex-col gap-2 md:gap-5 w-2/5 items-center justify-self-end">
+				{/* <div className="relative group">
 					<div className="absolute blur bg-accent transition duration-200 rounded-md -inset-1 opacity-80 animate-tilt"></div>
 					<h1 className="text-5xl md:text-6xl font-bold relative bg-background-dark px-5 py-2 rounded-md text-text-dark group-hover:text-secondary transition duration-500">
 						PEÇA JÁ O SEU
@@ -34,7 +34,7 @@ export function Home() {
 					<Link to="">
 						<img src={emailIcon} alt="email me" className="w-16" />
 					</Link>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);
