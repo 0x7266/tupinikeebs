@@ -22,6 +22,7 @@ export default function Slider({ images, index }: Props) {
 		<motion.div
 			key={size?.width}
 			ref={carousel}
+
 			className="hidden lg:flex cursor-grab justify-start gap-3 z-50 w-[800px] overflow-hidden"
 		>
 			<motion.div

@@ -1,15 +1,73 @@
-import { Link } from "react-router-dom";
-import typingImg from "../assets/typing.webp";
-import emailIcon from "../assets/icons/email_icon.webp";
-import telegramIcon from "../assets/icons/telegram_icon.png";
-import twitterIcon from "../assets/icons/twitter_icon.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useTransform, useScroll, motion } from "framer-motion";
+import { useRef } from "react";
 
-export function Home() {
-	const { scrollYProgress } = useScroll();
-	const imgScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1.3]);
+export const Home = () => {
+	const targetRef = useRef<HTMLDivElement | null>(null);
+	const extendedRef = useRef<HTMLDivElement | null>(null);
+	const { scrollYProgress } = useScroll({
+		target: targetRef,
+		offset: ["start end", "end end"],
+	});
+	const { scrollYProgress: scrollYProgressIncludingOverlap } = useScroll({
+		target: extendedRef,
+		offset: ["start end", "end end"],
+	});
+
+	const scale = useTransform(
+		scrollYProgressIncludingOverlap,
+		[0.1, 0.4, 0.75, 1],
+		[1, 2.5, 4.2, 1]
+	);
+	const x = useTransform(
+		scrollYProgressIncludingOverlap,
+		[0.1, 0.25, 0.75, 1],
+		["0vw", "-55vw", "-135vw", "-18vw"]
+	);
+	const y = useTransform(
+		scrollYProgressIncludingOverlap,
+		[0.75, 1],
+		["0vh", "40vh"]
+	);
+	const opacity = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
+
+	const avatarGroupOpacity = useTransform(
+		scrollYProgress,
+		[0, 0.23, 0.25],
+		[0, 0, 1]
+	);
+
+	const avatarGroupX = useTransform(
+		scrollYProgress,
+		[0, 0.23, 0.25, 0.4, 0.45, 0.6, 0.65],
+		["60px", "60px", "40px", "40px", "20px", "20px", "0px"]
+	);
+
+	const avatarOneScale = useTransform(
+		scrollYProgress,
+		[0, 0.23, 0.25, 0.85, 0.9],
+		[0, 0, 1, 1, 0]
+	);
+
+	const avatarTwoScale = useTransform(
+		scrollYProgress,
+		[0, 0.4, 0.45],
+		[0, 0, 1]
+	);
+
+	const avatarTwoOpacity = useTransform(
+		scrollYProgressIncludingOverlap,
+		[0.9999, 1],
+		[1, 0]
+	);
+
+	const avatarThreeScale = useTransform(
+		scrollYProgress,
+		[0, 0.6, 0.65, 0.85, 0.9],
+		[0, 0, 1, 1, 0]
+	);
 
 	return (
+
 		<section className="px-5 flex flex-col items-center">
 			<div className="flex flex-col gap-2 md:gap-5 w-2/5 items-center justify-self-end">
 				<div className="relative group">
@@ -38,4 +96,4 @@ export function Home() {
 			</div>
 		</section>
 	);
-}
+};

@@ -14,7 +14,6 @@ import img11 from "../assets/builds/img11.jpg";
 import img12 from "../assets/builds/img12.jpg";
 import img13 from "../assets/builds/img13.jpg";
 import { useState } from "react";
-
 export default function Carousel() {
 	const images = [
 		img0,
