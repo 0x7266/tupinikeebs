@@ -32,8 +32,8 @@ export default {
 				},
 			},
 			boxShadow: {
-				large: "inset 0 0 20vh 20vh #000",
-				small: "inset 0 0 15rem 2vw #000",
+				large: "inset 0 0 15vh 15vh #000000dd",
+				small: "inset 0 0 15rem 2vw #000000dd",
 			},
 		},
 	},
