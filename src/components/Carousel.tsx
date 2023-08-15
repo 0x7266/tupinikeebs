@@ -45,15 +45,23 @@ export default function Carousel() {
 	}
 
 	return (
-		<div className="h-full w-screen overflow-x-hidden flex flex-col items-center">
+		<div className="h-full overflow-x-hidden flex flex-col items-center overflow-hidden">
 			<Slider images={images} index={index} />
 			<div className="flex gap-5 text-xl justify-center">
-				<div className="" onClick={handlePrev}>
+				<button
+					disabled={index === 0}
+					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600 disabled:static"
+					onClick={handlePrev}
+				>
 					{"<<"}
-				</div>
-				<div className="" onClick={handleNext}>
+				</button>
+				<button
+					disabled={index === images.length - 1}
+					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600 disabled:static"
+					onClick={handleNext}
+				>
 					{">>"}
-				</div>
+				</button>
 			</div>
 		</div>
 	);
