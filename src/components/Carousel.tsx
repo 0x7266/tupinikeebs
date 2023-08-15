@@ -14,6 +14,7 @@ import img11 from "../assets/builds/img11.jpg";
 import img12 from "../assets/builds/img12.jpg";
 import img13 from "../assets/builds/img13.jpg";
 import { useState } from "react";
+import { motion } from "framer-motion";
 export default function Carousel() {
 	const images = [
 		img0,
@@ -38,7 +39,12 @@ export default function Carousel() {
 	}
 
 	return (
-		<div className="h-full overflow-x-hidden flex flex-col gap-3 items-center overflow-hidden">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ delay: 0.5, duration: 1 }}
+			className="h-full overflow-x-hidden flex flex-col gap-3 items-center overflow-hidden"
+		>
 			<Slider images={images} direction={direction} page={page} slide={slide} />
 			<div className="flex gap-5 text-xl justify-center z-50">
 				<button
@@ -54,6 +60,6 @@ export default function Carousel() {
 					{">>"}
 				</button>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
