@@ -73,14 +73,14 @@ export default function Hero() {
 			variants={sectionVariants}
 			initial="initial"
 			animate="animate"
-			className="flex flex-col items-center gap-10"
+			className="flex flex-col items-center gap-14"
 		>
 			<motion.div
 				variants={logoVariants}
 				className="flex flex-col gap-2 items-center justify-self-end"
 			>
 				<img src={logo} className="w-60" />
-				<div className="text-5xl md:text-6xl relative">
+				<div className="text-5xl md:text-7xl font-bold relative">
 					TupiniKeebs{" "}
 					<img src={brazilianFlag} className="w-4 absolute top-3 -right-4" />
 				</div>
@@ -88,11 +88,11 @@ export default function Hero() {
 
 			<motion.div
 				variants={heroVariants}
-				className="flex flex-col items-center gap-2"
+				className="flex flex-col items-center gap-4"
 			>
 				<motion.div
 					variants={bannerVariants}
-					className="text-4xl border rounded-xl px-5 py-2"
+					className="text-4xl border rounded-lg px-5 py-2"
 				>
 					ENCOMENDE JÁ O SEU
 				</motion.div>
