@@ -101,7 +101,7 @@ export function Hero() {
 			>
 				<motion.div
 					variants={bannerVariants}
-					className="text-4xl border rounded-lg px-5 py-2"
+					className="text-3xl md:text-4xl border rounded-lg px-5 py-2"
 				>
 					ENCOMENDE JÁ O SEU
 				</motion.div>
