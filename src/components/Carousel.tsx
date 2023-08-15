@@ -31,36 +31,25 @@ export default function Carousel() {
 		img12,
 		img13,
 	];
-	const [index, setIndex] = useState<number>(0);
-	const [direction, setDirection] = useState<-1 | 1>(1);
 
-	function handleNext() {
-		if (index === images.length - 1) return;
-		setIndex(index + 1);
-		setDirection(-1);
-	}
-
-	function handlePrev() {
-		if (index === 0) return;
-		setIndex(index - 1);
-		setDirection(1);
+	const [[page, direction], setPage] = useState([0, 0]);
+	function slide(newDirection: number) {
+		setPage([page + newDirection, newDirection]);
 	}
 
 	return (
-		<div className="h-full overflow-x-hidden flex flex-col gap-5 items-center overflow-hidden">
-			<Slider images={images} index={index} direction={direction} />
+		<div className="h-full overflow-x-hidden flex flex-col gap-3 items-center overflow-hidden">
+			<Slider images={images} direction={direction} page={page} slide={slide} />
 			<div className="flex gap-5 text-xl justify-center">
 				<button
-					disabled={index === 0}
-					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600 disabled:static"
-					onClick={handlePrev}
+					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600"
+					onClick={() => slide(-1)}
 				>
 					{"<<"}
 				</button>
 				<button
-					disabled={index === images.length - 1}
-					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600 disabled:static"
-					onClick={handleNext}
+					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600"
+					onClick={() => slide(1)}
 				>
 					{">>"}
 				</button>
