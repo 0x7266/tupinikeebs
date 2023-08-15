@@ -22,20 +22,20 @@ export default function Slider({ images, index }: Props) {
 		<motion.div
 			key={size?.width}
 			ref={carousel}
-			className="cursor-grab flex justify-start gap-3 z-50 w-[800px]"
+			className="hidden lg:flex cursor-grab justify-start gap-3 z-50 w-[800px] overflow-hidden"
 		>
 			<motion.div
 				animate={{ x: `-${index * 800}px` }}
+				transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
 				className="flex justify-center"
 			>
 				{images.map((image, index) => (
-					<div className="w-[800px]">
+					<motion.div className="w-[800px]" key={index}>
 						<img
-							key={index}
 							src={image}
 							className="aspect-[16/9] object-cover p-4 rounded-3xl"
 						/>
-					</div>
+					</motion.div>
 				))}
 			</motion.div>
 		</motion.div>
