@@ -33,7 +33,7 @@ export default function Slider({ images, index }: Props) {
 						<img
 							key={index}
 							src={image}
-							className="aspect-[16/9] object-cover p-5 rounded-3xl"
+							className="aspect-[16/9] object-cover p-4 rounded-3xl"
 						/>
 					</div>
 				))}
