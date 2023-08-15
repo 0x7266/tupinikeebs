@@ -15,7 +15,8 @@ import img12 from "../assets/builds/img12.jpg";
 import img13 from "../assets/builds/img13.jpg";
 import { useState } from "react";
 import { motion } from "framer-motion";
-export default function Carousel() {
+
+export function Carousel() {
 	const images = [
 		img0,
 		img1,

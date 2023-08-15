@@ -1,4 +1,5 @@
 export * from "./CardStack";
+export * from "./Carousel";
 export * from "./Header";
-export * from "./Product";
-export * from "./ThemeSwitcher";
+export * from "./Hero";
+export * from "./Slider";

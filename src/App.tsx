@@ -5,9 +5,7 @@ import {
 	useMotionTemplate,
 } from "framer-motion";
 import { BrowserRouter } from "react-router-dom";
-import { Header } from "./components";
-import Carousel from "./components/Carousel";
-import Hero from "./components/Hero";
+import { Carousel, Hero } from "./components";
 
 function App() {
 	const mouseX = useMotionValue(0);

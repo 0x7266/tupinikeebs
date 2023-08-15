@@ -67,7 +67,7 @@ const iconVariants: Variants = {
 	},
 };
 
-export default function Hero() {
+export function Hero() {
 	return (
 		<motion.section
 			variants={sectionVariants}
