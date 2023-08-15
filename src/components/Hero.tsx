@@ -79,7 +79,13 @@ export function Hero() {
 				<img src={logo} className="w-60" />
 				<div className="text-5xl md:text-7xl font-bold relative">
 					TupiniKeebs{" "}
-					<img src={brazilianFlag} className="w-4 absolute top-3 -right-4" />
+					<motion.img
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.7 }}
+						src={brazilianFlag}
+						className="w-4 absolute top-3 -right-4"
+					/>
 				</div>
 			</motion.div>
 
