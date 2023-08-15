@@ -22,7 +22,7 @@ function App() {
 		<AnimatePresence>
 			<div className="bg min-h-[100dvh] overflow-hidden">
 				<motion.div
-					className="backdrop-brightness-[30%] shadow-small md:shadow-large group"
+					className="backdrop-brightness-[12%] shadow-small md:shadow-large group"
 					onMouseMove={handleMouseMove}
 				>
 					<motion.div
