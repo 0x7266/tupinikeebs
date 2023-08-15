@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import { Variants, motion } from "framer-motion";
 import logo from "../assets/logo.png";
-import {
-	motion,
-	useMotionTemplate,
-	useMotionValue,
-	useScroll,
-	useTransform,
-} from "framer-motion";
-import { useRef } from "react";
 
 export function Header() {
 	const links = [
@@ -73,6 +65,5 @@ export function Header() {
 				</motion.nav>
 			</motion.div>
 		</header>
-
 	);
 }

@@ -32,20 +32,23 @@ export default function Carousel() {
 		img13,
 	];
 	const [index, setIndex] = useState<number>(0);
+	const [direction, setDirection] = useState<-1 | 1>(1);
 
 	function handleNext() {
 		if (index === images.length - 1) return;
 		setIndex(index + 1);
+		setDirection(-1);
 	}
 
 	function handlePrev() {
 		if (index === 0) return;
 		setIndex(index - 1);
+		setDirection(1);
 	}
 
 	return (
 		<div className="h-full overflow-x-hidden flex flex-col items-center overflow-hidden">
-			<Slider images={images} index={index} />
+			<Slider images={images} index={index} direction={direction} />
 			<div className="flex gap-5 text-xl justify-center">
 				<button
 					disabled={index === 0}

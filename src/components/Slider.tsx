@@ -1,40 +1,33 @@
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import useWindowSize from "../hooks/useWindowSize";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
 	images: string[];
 	index: number;
+	direction: -1 | 1;
 };
 
-export default function Slider({ images, index }: Props) {
-	const [width, setWidth] = useState<number>(0);
-	const carousel = useRef<HTMLDivElement | null>(null);
-	const size = useWindowSize();
+const imgVariants = {
+	initial: (direction: number) => ({ x: -1000 * direction }),
+	animate: { x: 0 },
+	exit: (direction: number) => ({ x: 1000 * direction }),
+};
 
-	useEffect(() => {
-		setWidth(
-			(_prev) => carousel.current?.scrollWidth - carousel.current?.offsetWidth
-		);
-	}, [size]);
-
+export default function Slider({ images, index, direction }: Props) {
 	return (
-		<motion.div
-			key={size?.width}
-			ref={carousel}
-
-			className="hidden lg:flex cursor-grab justify-start gap-3 z-50 w-[800px] overflow-hidden"
-		>
-			<motion.div
-				animate={{ x: `-${index * 800}px` }}
-				transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-				className="flex justify-center"
-			>
-				<img
+		<div className="relative flex justify-center items-center w-[60vw] h-[45vh] border-4 rounded-2xl overflow-hidden">
+			<AnimatePresence initial={false} key={direction}>
+				<motion.img
+					custom={direction}
+					variants={imgVariants}
+					initial="initial"
+					animate="animate"
+					exit="exit"
+					transition={{ duration: 0.3 }}
 					src={images[index]}
-					className="aspect-[16/9] object-cover p-4 rounded-3xl"
+					key={images[index]}
+					className="absolute object-contain aspect-[3/5] rounded-xl"
 				/>
-			</motion.div>
-		</motion.div>
+			</AnimatePresence>
+		</div>
 	);
 }
