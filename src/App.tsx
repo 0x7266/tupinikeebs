@@ -1,28 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+
+import { AnimatePresence } from "framer-motion";
+import { BrowserRouter } from "react-router-dom";
 import { Header } from "./components";
-import { Home, Products } from "./pages";
-import Product from "./components/Product";
-import Slider from "./components/Slider";
 import Carousel from "./components/Carousel";
+import Hero from "./components/Hero";
 
 function App() {
 	return (
-		<BrowserRouter>
-			<div className="text-text-dark font-mono overflow-x-clip">
-				<div className="h-full backdrop-brightness-[25%] flex flex-col items-center group">
-					<Header />
-					<Carousel />
-					{/* <div className="container flex flex-col items-center gap-12 md:gap-20">
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/products" element={<Products />} />
-							<Route path="/:id" element={<Product />} />
-						</Routes>
-					</div> */}
+		<AnimatePresence>
+			<BrowserRouter>
+				<div className="bg min-h-[100dvh] overflow-hidden">
+					<div className="backdrop-brightness-[20%] shadow-small md:shadow-large">
+						<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-mono text-text-dark min-h-screen">
+							<Header />
+							<Hero />
+							<Carousel />
+						</div>
+					</div>
 				</div>
-			</div>
-		</BrowserRouter>
+			</BrowserRouter>
+		</AnimatePresence>
 	);
 }
 

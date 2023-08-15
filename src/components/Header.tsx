@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Variants, motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import {
 	motion,
@@ -16,65 +17,62 @@ export function Header() {
 		{ path: "/faq", name: "FAQ" },
 	];
 
-	const ref = useRef(null);
+	const containerVariants: Variants = {
+		animate: {
+			transition: {
+				staggerChildren: 0.2,
+			},
+		},
+	};
 
-	const { scrollYProgress } = useScroll({
-		target: ref,
-		offset: ["end end", "end start"],
-	});
-
-	const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-	const position = useTransform(scrollYProgress, (pos) =>
-		pos >= 1 ? "relative" : "fixed"
-	);
-	const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.4]);
-
-	const mouseX = useMotionValue(0);
-	const mouseY = useMotionValue(0);
-
-	function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-		if (currentTarget) {
-			const { left, top } = currentTarget.getBoundingClientRect();
-			mouseX.set(clientX - left);
-			mouseY.set(clientY - top);
-		}
-	}
+	const linkVariants: Variants = {
+		initial: {
+			opacity: 0,
+			y: -200,
+		},
+		animate: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				type: "spring",
+				stiffness: 80,
+				damping: 13,
+			},
+		},
+	};
 
 	return (
-		<motion.header onMouseMove={handleMouseMove} className="bg w-full h-screen">
+		<header className="flex justify-center w-full">
 			<motion.div
-				className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl"
-				style={{
-					background: useMotionTemplate`radial-gradient(circle farthest-side at ${mouseX}px ${mouseY}px, rgba(170, 170, 170, .3), transparent 100%)`,
-				}}
-			/>
-			<div className="backdrop-brightness-[25%] h-full">
-				<motion.div
-					ref={ref}
-					className="w-full h-full flex justify-center pt-20"
-				>
-					<motion.div
-						style={{ position, scale, opacity }}
-						className="flex flex-col gap-3 justify-around items-center"
-					>
-						<Link to="/">
-							<div className="flex flex-col gap-3 items-center relative">
-								<img className="w-32" src={logo} />
-								<span className="text-9xl font-bold relative -top-4 md:-top-0">
-									TupiniKeebs
-								</span>
-							</div>
-						</Link>
-						<nav className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center">
-							{links.map((link, index) => (
-								<Link to={link.path} key={index}>
-									{link.name}
-								</Link>
-							))}
-						</nav>
-					</motion.div>
+				variants={containerVariants}
+				initial="initial"
+				animate="animate"
+				className="container flex flex-col gap-3 md:flex-row justify-around items-center"
+			>
+				<motion.div variants={linkVariants}>
+					<Link to="/">
+						<div className="flex flex-col md:flex-row gap-4 items-center relative">
+							<img className="w-28" src={logo} />
+							<span className="text-5xl md:text-2xl font-bold relative -top-4 md:-top-0">
+								TupiniKeebs
+							</span>
+						</div>
+					</Link>
 				</motion.div>
-			</div>
-		</motion.header>
+				<motion.nav
+					variants={containerVariants}
+					className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center"
+				>
+					{links.map((link, index) => (
+						<motion.div variants={linkVariants} key={index}>
+							<Link to={link.path} key={index}>
+								{link.name}
+							</Link>
+						</motion.div>
+					))}
+				</motion.nav>
+			</motion.div>
+		</header>
+
 	);
 }

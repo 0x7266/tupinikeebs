@@ -4,9 +4,10 @@ import useWindowSize from "../hooks/useWindowSize";
 
 type Props = {
 	images: string[];
+	index: number;
 };
 
-export default function Slider({ images }: Props) {
+export default function Slider({ images, index }: Props) {
 	const [width, setWidth] = useState<number>(0);
 	const carousel = useRef<HTMLDivElement | null>(null);
 	const size = useWindowSize();
@@ -21,18 +22,18 @@ export default function Slider({ images }: Props) {
 		<motion.div
 			key={size?.width}
 			ref={carousel}
-			className="cursor-grab flex gap-3 z-50"
+
+			className="hidden lg:flex cursor-grab justify-start gap-3 z-50 w-[800px] overflow-hidden"
 		>
 			<motion.div
-				drag="x"
-				dragConstraints={{ right: 0, left: -width }}
-				className="inline-flex gap-2"
+				animate={{ x: `-${index * 800}px` }}
+				transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+				className="flex justify-center"
 			>
-				{images.map((image, index) => (
-					<div className="rounded-2xl overflow-clip w-96 h-60" key={index}>
-						<img src={image} />
-					</div>
-				))}
+				<img
+					src={images[index]}
+					className="aspect-[16/9] object-cover p-4 rounded-3xl"
+				/>
 			</motion.div>
 		</motion.div>
 	);
