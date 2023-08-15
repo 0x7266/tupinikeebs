@@ -36,7 +36,7 @@ function App() {
 							}}
 						/>
 						<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-mono text-text-dark min-h-screen">
-							<Header />
+							{/* <Header /> */}
 							<Hero />
 							<Carousel />
 						</div>
