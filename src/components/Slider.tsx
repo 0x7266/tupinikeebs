@@ -29,14 +29,10 @@ export default function Slider({ images, index }: Props) {
 				transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
 				className="flex justify-center"
 			>
-				{images.map((image, index) => (
-					<motion.div className="w-[800px]" key={index}>
-						<img
-							src={image}
-							className="aspect-[16/9] object-cover p-4 rounded-3xl"
-						/>
-					</motion.div>
-				))}
+				<img
+					src={images[index]}
+					className="aspect-[16/9] object-cover p-4 rounded-3xl"
+				/>
 			</motion.div>
 		</motion.div>
 	);
