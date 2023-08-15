@@ -34,7 +34,7 @@ export function Header() {
 	};
 
 	return (
-		<header className="flex justify-center dark:text-text-dark w-full">
+		<header className="flex justify-center w-full">
 			<motion.div
 				variants={containerVariants}
 				initial="initial"
