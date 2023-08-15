@@ -5,7 +5,6 @@ import {
 	motion,
 	useMotionTemplate,
 } from "framer-motion";
-import { BrowserRouter } from "react-router-dom";
 import { Carousel, Hero } from "./components";
 
 function App() {
@@ -21,26 +20,24 @@ function App() {
 	}
 	return (
 		<AnimatePresence>
-			<BrowserRouter>
-				<div className="bg min-h-[100dvh] overflow-hidden">
+			<div className="bg min-h-[100dvh] overflow-hidden">
+				<motion.div
+					className="backdrop-brightness-[30%] shadow-small md:shadow-large group"
+					onMouseMove={handleMouseMove}
+				>
 					<motion.div
-						className="backdrop-brightness-[20%] shadow-small md:shadow-large group"
-						onMouseMove={handleMouseMove}
-					>
-						<motion.div
-							className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl"
-							style={{
-								background: useMotionTemplate`radial-gradient(circle 40vw at ${mouseX}px ${mouseY}px, rgba(150, 150, 160, .15), transparent 100%)`,
-							}}
-						/>
-						<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-mono text-text-dark min-h-screen">
-							{/* <Header /> */}
-							<Hero />
-							<Carousel />
-						</div>
-					</motion.div>
-				</div>
-			</BrowserRouter>
+						className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl"
+						style={{
+							background: useMotionTemplate`radial-gradient(circle 40vw at ${mouseX}px ${mouseY}px, rgba(150, 150, 160, .1), transparent 100%)`,
+						}}
+					/>
+					<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-mono text-text-dark min-h-screen">
+						{/* <Header /> */}
+						<Hero />
+						<Carousel />
+					</div>
+				</motion.div>
+			</div>
 		</AnimatePresence>
 	);
 }

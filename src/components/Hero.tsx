@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import { Variants, motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import brazilianFlag from "../assets/brazilian_flag.svg";
-import emailIcon from "../assets/mail.svg";
-import telegramIcon from "../assets/telegram.svg";
-import xIcon from "../assets/x.svg";
-import wppIcon from "../assets/whatsapp.svg";
+import emailIcon from "../assets/icons_set_2/mail.svg";
+import telegramIcon from "../assets/icons_set_2/telegram.svg";
+import xIcon from "../assets/icons_set_2/x.svg";
+import wppIcon from "../assets/icons_set_2/whatsapp.svg";
 
 const sectionVariants: Variants = {
 	animate: {
@@ -79,7 +78,7 @@ export function Hero() {
 			>
 				<img src={logo} className="w-60" />
 				<div className="text-5xl md:text-7xl font-bold relative">
-					TupiniKeebs{" "}
+					TupiniKeebs
 					<motion.img
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
@@ -96,7 +95,7 @@ export function Hero() {
 			>
 				<motion.div
 					variants={bannerVariants}
-					className="text-4xl border rounded-lg px-5 py-2"
+					className="text-4xl border rounded-lg px-5 py-2 animate-tilt"
 				>
 					ENCOMENDE JÁ O SEU
 				</motion.div>
@@ -105,24 +104,24 @@ export function Hero() {
 					className="flex items-center justify-center gap-5"
 				>
 					<motion.div custom={1} variants={iconVariants}>
-						<Link to="https://twitter.com/neversaytop">
-							<img src={xIcon} alt="twitter" className="w-12" />
-						</Link>
+						<a href="https://twitter.com/neversaytop">
+							<img src={xIcon} alt="x / twitter" className="w-10" />
+						</a>
 					</motion.div>
 					<motion.div custom={2} variants={iconVariants}>
-						<Link to="">
-							<img src={wppIcon} alt="telegram" className="w-12" />
-						</Link>
+						<a href="https://wa.me/5582991749959">
+							<img src={wppIcon} alt="whatsapp" className="w-10" />
+						</a>
 					</motion.div>
 					<motion.div custom={3} variants={iconVariants}>
-						<Link to="">
-							<img src={telegramIcon} alt="telegram" className="w-12" />
-						</Link>
+						<a href="https://t.me/ferreirafelipe">
+							<img src={telegramIcon} alt="telegram" className="w-10" />
+						</a>
 					</motion.div>
 					<motion.div custom={4} variants={iconVariants}>
-						<Link to="">
-							<img src={emailIcon} alt="email me" className="w-12" />
-						</Link>
+						<a href="mailto:ferreirafelipe.dev@gmail.com">
+							<img src={emailIcon} alt="email me" className="w-10" />
+						</a>
 					</motion.div>
 				</motion.div>
 			</motion.div>
