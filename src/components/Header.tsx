@@ -56,7 +56,7 @@ export function Header() {
 					className="flex items-center text-xl font-semibold md:gap-6 w-full md:w-fit justify-around md:justify-center"
 				>
 					{links.map((link, index) => (
-						<motion.div variants={linkVariants}>
+						<motion.div variants={linkVariants} key={index}>
 							<Link to={link.path} key={index}>
 								{link.name}
 							</Link>
