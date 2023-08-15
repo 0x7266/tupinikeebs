@@ -2,6 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "./components";
 import Carousel from "./components/Carousel";
+import Hero from "./components/Hero";
 
 function App() {
 	return (
@@ -9,8 +10,9 @@ function App() {
 			<BrowserRouter>
 				<div className="bg min-h-[100dvh] overflow-hidden">
 					<div className="backdrop-brightness-[20%] shadow-small md:shadow-large">
-						<div className="container mx-auto py-5 flex flex-col gap-20 items-center font-mono text-text-dark min-h-screen">
+						<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-mono text-text-dark min-h-screen">
 							<Header />
+							<Hero />
 							<Carousel />
 						</div>
 					</div>
