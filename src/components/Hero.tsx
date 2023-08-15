@@ -29,7 +29,7 @@ const logoVariants: Variants = {
 const heroVariants: Variants = {
 	animate: {
 		transition: {
-			staggerChildren: 0.2,
+			staggerChildren: 0.5,
 		},
 	},
 };
@@ -40,8 +40,14 @@ const bannerVariants: Variants = {
 		opacity: 0,
 	},
 	animate: {
+		animation: "tilt 10s infinite linear",
 		scale: [1, 1.1, 1],
 		opacity: 1,
+		transition: {
+			animation: {
+				delay: 1,
+			},
+		},
 	},
 };
 
@@ -95,7 +101,7 @@ export function Hero() {
 			>
 				<motion.div
 					variants={bannerVariants}
-					className="text-4xl border rounded-lg px-5 py-2 animate-tilt"
+					className="text-4xl border rounded-lg px-5 py-2"
 				>
 					ENCOMENDE JÁ O SEU
 				</motion.div>
@@ -103,22 +109,22 @@ export function Hero() {
 					variants={iconContainerVariants}
 					className="flex items-center justify-center gap-5"
 				>
-					<motion.div custom={1} variants={iconVariants}>
+					<motion.div variants={iconVariants}>
 						<a href="https://twitter.com/neversaytop">
 							<img src={xIcon} alt="x / twitter" className="w-10" />
 						</a>
 					</motion.div>
-					<motion.div custom={2} variants={iconVariants}>
+					<motion.div variants={iconVariants}>
 						<a href="https://wa.me/5582991749959">
 							<img src={wppIcon} alt="whatsapp" className="w-10" />
 						</a>
 					</motion.div>
-					<motion.div custom={3} variants={iconVariants}>
+					<motion.div variants={iconVariants}>
 						<a href="https://t.me/ferreirafelipe">
 							<img src={telegramIcon} alt="telegram" className="w-10" />
 						</a>
 					</motion.div>
-					<motion.div custom={4} variants={iconVariants}>
+					<motion.div variants={iconVariants}>
 						<a href="mailto:ferreirafelipe.dev@gmail.com">
 							<img src={emailIcon} alt="email me" className="w-10" />
 						</a>

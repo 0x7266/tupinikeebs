@@ -31,7 +31,7 @@ function App() {
 							background: useMotionTemplate`radial-gradient(circle 40vw at ${mouseX}px ${mouseY}px, rgba(150, 150, 160, .1), transparent 100%)`,
 						}}
 					/>
-					<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-mono text-text-dark min-h-screen">
+					<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-one text-text min-h-screen">
 						{/* <Header /> */}
 						<Hero />
 						<Carousel />
