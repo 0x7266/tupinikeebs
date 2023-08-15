@@ -47,7 +47,7 @@ export default function Carousel() {
 	}
 
 	return (
-		<div className="h-full overflow-x-hidden flex flex-col items-center overflow-hidden">
+		<div className="h-full overflow-x-hidden flex flex-col gap-5 items-center overflow-hidden">
 			<Slider images={images} index={index} direction={direction} />
 			<div className="flex gap-5 text-xl justify-center">
 				<button

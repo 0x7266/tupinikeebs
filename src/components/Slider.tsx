@@ -14,7 +14,7 @@ const imgVariants = {
 
 export default function Slider({ images, index, direction }: Props) {
 	return (
-		<div className="relative flex justify-center items-center w-[60vw] h-[45vh] border-4 rounded-2xl overflow-hidden">
+		<div className="relative flex justify-center items-center w-[90dvw] h-[40dvh] md:w-[30vw] rounded-2xl overflow-hidden">
 			<AnimatePresence initial={false} key={direction}>
 				<motion.img
 					custom={direction}
@@ -25,7 +25,7 @@ export default function Slider({ images, index, direction }: Props) {
 					transition={{ duration: 0.3 }}
 					src={images[index]}
 					key={images[index]}
-					className="absolute object-contain aspect-[3/5] rounded-xl"
+					className="absolute object-contain rounded-xl w-[90vw] md:max-w-[30vw]"
 				/>
 			</AnimatePresence>
 		</div>
