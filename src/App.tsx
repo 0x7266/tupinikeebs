@@ -9,9 +9,9 @@ function App() {
 	return (
 		<AnimatePresence>
 			<BrowserRouter>
-				<div className="bg min-h-[100dvh]">
-					<div className="min-h-[100dvh] backdrop-brightness-[20%] shadow-small md:shadow-large">
-						<div className="container mx-auto py-5 flex flex-col items-center font-mono text-text-dark">
+				<div className="bg min-h-[100dvh] overflow-hidden">
+					<div className="backdrop-brightness-[20%] shadow-small md:shadow-large">
+						<div className="container mx-auto py-5 flex flex-col gap-20 items-center font-mono text-text-dark min-h-screen">
 							<Header />
 							<Carousel></Carousel>
 							<Routes>
