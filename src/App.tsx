@@ -1,3 +1,4 @@
+import { MouseEvent } from "react";
 import {
 	AnimatePresence,
 	useMotionValue,
@@ -12,7 +13,7 @@ function App() {
 	const mouseY = useMotionValue(0);
 
 	function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-		if (currentTarget) {
+		if (currentTarget && currentTarget) {
 			const { left, top } = currentTarget.getBoundingClientRect();
 			mouseX.set(clientX - left);
 			mouseY.set(clientY - top);
