@@ -19,7 +19,6 @@ function App() {
 			mouseX.set(clientX - left);
 			mouseY.set(clientY - top);
 		}
-		console.log(currentTarget);
 	}
 	return (
 		<AnimatePresence>

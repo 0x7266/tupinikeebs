@@ -10,13 +10,15 @@ export default function Hero() {
 		<section className="flex flex-col items-center gap-14">
 			<div className="flex flex-col gap-2 items-center justify-self-end">
 				<img src={logo} className="w-60" />
-				<div className="text-6xl relative">
+				<div className="text-5xl md:text-6xl relative">
 					TupiniKeebs{" "}
 					<img src={brazilianFlag} className="w-4 absolute top-3 -right-4" />
 				</div>
 			</div>
 			<div className="flex flex-col items-center gap-2">
-				<div className="text-4xl border rounded-xl px-5 py-2">PEÇA O SEU</div>
+				<div className="text-4xl border rounded-xl px-5 py-2">
+					ENCOMENDE JÁ O SEU
+				</div>
 				<div className="flex items-center justify-center gap-5">
 					<Link to="https://twitter.com/neversaytop">
 						<img src={twitterIcon} alt="twitter" className="w-16" />

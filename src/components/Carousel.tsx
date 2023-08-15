@@ -40,7 +40,7 @@ export default function Carousel() {
 	return (
 		<div className="h-full overflow-x-hidden flex flex-col gap-3 items-center overflow-hidden">
 			<Slider images={images} direction={direction} page={page} slide={slide} />
-			<div className="flex gap-5 text-xl justify-center">
+			<div className="flex gap-5 text-xl justify-center z-50">
 				<button
 					className="relative active:top-1 hover:text-text-dark disabled:text-gray-600"
 					onClick={() => slide(-1)}

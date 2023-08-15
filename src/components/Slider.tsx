@@ -37,7 +37,7 @@ function swipePower(offset: number, velocity: number) {
 export default function Slider({ images, direction, page, slide }: Props) {
 	const index = wrap(0, images.length, page);
 	return (
-		<div className="relative flex justify-center items-center w-[90dvw] h-[30dvh] md:h-[45dvh] md:w-[60vw] rounded-2xl overflow-hidden">
+		<div className="relative flex justify-center items-center w-[90dvw] h-[40dvh] md:h-[45dvh] md:w-[60vw] rounded-2xl overflow-hidden">
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.img
 					key={page}
@@ -63,7 +63,7 @@ export default function Slider({ images, direction, page, slide }: Props) {
 							slide(-1);
 						}
 					}}
-					className="absolute object-cover rounded-xl max-w-[100vw]"
+					className="absolute object-cover rounded-xl h-full w-full max-w-[100vw]"
 				/>
 			</AnimatePresence>
 		</div>
