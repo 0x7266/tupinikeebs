@@ -82,13 +82,13 @@ export function Hero() {
 				variants={logoVariants}
 				className="flex flex-col gap-2 items-center justify-self-end"
 			>
-				<img src={logo} className="w-60" />
+				<img src={logo} className="w-40 md:w-60" />
 				<div className="text-5xl md:text-7xl font-bold relative">
 					TupiniKeebs
 					<motion.img
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						transition={{ delay: 0.7 }}
+						transition={{ delay: 1 }}
 						src={brazilianFlag}
 						className="w-4 absolute top-3 -right-4"
 					/>
