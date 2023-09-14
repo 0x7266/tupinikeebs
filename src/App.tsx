@@ -22,7 +22,7 @@ function App() {
 		<AnimatePresence>
 			<div className="bg min-h-[100dvh] overflow-hidden">
 				<motion.div
-					className="backdrop-brightness-[12%] shadow-small md:shadow-large group"
+					className="backdrop-brightness-[12%] shadow-small md:shadow-large group min-h-[100dvh]"
 					onMouseMove={handleMouseMove}
 				>
 					<motion.div
@@ -31,7 +31,7 @@ function App() {
 							background: useMotionTemplate`radial-gradient(circle 40vw at ${mouseX}px ${mouseY}px, rgba(150, 150, 160, .1), transparent 100%)`,
 						}}
 					/>
-					<div className="container mx-auto py-5 flex flex-col gap-12 items-center font-one text-text min-h-screen">
+					<div className="container mx-auto py-4 px-2 flex flex-col gap-10 items-center font-one text-text">
 						{/* <Header /> */}
 						<Hero />
 						<Carousel />
